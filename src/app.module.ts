@@ -6,6 +6,7 @@ import { ClientModule } from './clients/infraestructure/client.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MongooseModule } from '@nestjs/mongoose';
+import { GameModule } from './games/infraestructure/game.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     WsServerModule,
     BetModule,
     ClientModule,
+    GameModule,
   ],
   controllers: [],
   providers: [],

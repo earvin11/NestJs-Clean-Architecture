@@ -4,6 +4,7 @@ import { GameUseCases } from '../application/game.use-cases';
 import { GameRepository } from '../domain/game.repository';
 import { MongooseModule } from '@nestjs/mongoose';
 import { GameModel, GameSchema } from './models/game.model';
+import { GameController } from './game.controller';
 
 @Module({
   imports: [
@@ -14,9 +15,10 @@ import { GameModel, GameSchema } from './models/game.model';
       },
     ]),
   ],
+  controllers: [GameController],
   providers: [
-    GameMongoRepository,
     GameUseCases,
+    GameMongoRepository,
     {
       provide: GameRepository,
       useExisting: GameMongoRepository,

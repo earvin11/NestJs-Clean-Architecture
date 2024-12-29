@@ -1,7 +1,9 @@
+import { Injectable } from '@nestjs/common';
 import { GameEntity } from '../domain/game.entity';
 import { GameRepository } from '../domain/game.repository';
 import { Game } from '../domain/game.value';
 
+@Injectable()
 export class GameUseCases {
   constructor(private readonly gameRepository: GameRepository) {}
 
