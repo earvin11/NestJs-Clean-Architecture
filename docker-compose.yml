@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  postgres-db:
+    container_name: sprint_race_postgre
+    image: postgres:16.2
+    restart: always
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - 4321:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=racesdb
+  mongo-db:
+    container_name: sprint_race_mongo
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+volumes:
+  postgres_data: {} # Volumen para PostgreSQL
+  mongo_data: {}    # Volumen para MongoDB
+
