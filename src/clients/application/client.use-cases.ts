@@ -11,4 +11,16 @@ export class ClientUseCases {
     const client = new Client(data);
     return await this.clientRepository.create(client);
   }
+  async findAll() {
+    return await this.clientRepository.findAll();
+  }
+  async findByUuid(uuid: string) {
+    return await this.clientRepository.findByUuid(uuid);
+  }
+  async update(uuid: string, data: Partial<ClientEntity>) {
+    return await this.clientRepository.update(uuid, data);
+  }
+  async remove(uuid: string) {
+    return await this.clientRepository.remove(uuid);
+  }
 }
