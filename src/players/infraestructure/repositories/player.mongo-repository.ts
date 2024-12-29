@@ -19,10 +19,20 @@ export class PlayerMongoRepository extends PlayerRepository {
   findAll(): Promise<PlayerEntity[] | []> {
     return this.playerModel.find().exec();
   }
-  async findById(id: string): Promise<PlayerEntity | null> {
-    return await this.playerModel.findById(id);
+  async findByUuid(uuid: string): Promise<PlayerEntity | null> {
+    return await this.playerModel.findOne({ uuid });
   }
-  delete(id: string): Promise<PlayerEntity | null> {
-    throw new Error('Method not implemented.');
+  async update(
+    uuid: string,
+    dataToUpdate: Partial<PlayerEntity>,
+  ): Promise<PlayerEntity | null> {
+    const data = await this.playerModel.findOneAndUpdate(
+      { uuid },
+      { ...dataToUpdate },
+    );
+    return data;
+  }
+  async delete(uuid: string): Promise<PlayerEntity | null> {
+    return await this.playerModel.findOneAndUpdate({ uuid }, { status: false });
   }
 }

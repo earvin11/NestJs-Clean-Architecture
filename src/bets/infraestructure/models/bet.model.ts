@@ -3,7 +3,7 @@ import { Document } from 'mongoose';
 import { BetEntity } from 'src/bets/domain/bet.entity';
 
 @Schema()
-export class Bet extends Document implements BetEntity {
+export class BetModel extends Document implements BetEntity {
   @Prop({ required: true })
   uuid: string;
 
@@ -26,4 +26,4 @@ export class Bet extends Document implements BetEntity {
   isPaid: boolean;
 }
 
-export const BetSchema = SchemaFactory.createForClass(Bet);
+export const BetSchema = SchemaFactory.createForClass(BetModel);

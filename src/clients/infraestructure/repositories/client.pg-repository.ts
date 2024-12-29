@@ -15,4 +15,19 @@ export class ClientPgRepository extends ClientRepository {
     const client = this.clientRepo.create(data);
     return await this.clientRepo.save(client);
   }
+  findAll(): Promise<ClientEntity[] | []> {
+    throw new Error('Method not implemented.');
+  }
+  findByUuid(uuid: string): Promise<ClientEntity | null> {
+    throw new Error('Method not implemented.');
+  }
+  update(
+    uuid: string,
+    data: Partial<ClientEntity>,
+  ): Promise<ClientEntity | null> {
+    throw new Error('Method not implemented.');
+  }
+  remove(uuid: string): Promise<ClientEntity | null> {
+    throw new Error('Method not implemented.');
+  }
 }

@@ -27,5 +27,4 @@ export class Client implements ClientEntity {
     this.useLogo = data.useLogo;
     this.uuid = generateUuid();
   }
-  
 }

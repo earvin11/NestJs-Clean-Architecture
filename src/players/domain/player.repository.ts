@@ -3,6 +3,10 @@ import { PlayerEntity } from './player.entity';
 export abstract class PlayerRepository {
   abstract create(data: PlayerEntity): Promise<PlayerEntity>;
   abstract findAll(): Promise<PlayerEntity[] | []>;
-  abstract findById(id: string): Promise<PlayerEntity | null>;
-  abstract delete(id: string): Promise<PlayerEntity | null>;
+  abstract findByUuid(uuid: string): Promise<PlayerEntity | null>;
+  abstract update(
+    uuid: string,
+    data: Partial<PlayerEntity>,
+  ): Promise<PlayerEntity | null>;
+  abstract delete(uuid: string): Promise<PlayerEntity | null>;
 }

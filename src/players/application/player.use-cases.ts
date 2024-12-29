@@ -14,10 +14,13 @@ export class PlayerUseCases {
   async findAll() {
     return await this.playerRepository.findAll();
   }
-  async findById(id: string) {
-    return await this.playerRepository.findById(id);
+  async findById(uuid: string) {
+    return await this.playerRepository.findByUuid(uuid);
   }
-  async delete(id: string) {
-    return await this.playerRepository.delete(id);
+  async update(uuid: string, data: Partial<PlayerEntity>) {
+    return await this.playerRepository.update(uuid, data);
+  }
+  async delete(uuid: string) {
+    return await this.playerRepository.delete(uuid);
   }
 }

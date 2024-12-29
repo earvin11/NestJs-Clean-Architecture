@@ -37,7 +37,7 @@ export class Client implements ClientEntity {
 
   @Column()
   available?: boolean;
-  
+
   @Column()
   useLogo?: boolean;
 }

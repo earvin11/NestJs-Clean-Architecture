@@ -1,5 +1,5 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { ClientUseCases } from '../applicacion/client.use-cases';
+import { ClientUseCases } from '../application/client.use-cases';
 import { CreateClientDto } from './create-client.dto';
 
 @Controller('clients')

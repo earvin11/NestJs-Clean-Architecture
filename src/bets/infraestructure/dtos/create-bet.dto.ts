@@ -1,23 +1,30 @@
-import { IsBoolean, IsNumber, IsObject, IsPositive, IsString, Min } from "class-validator";
+import {
+  IsBoolean,
+  IsNumber,
+  IsObject,
+  IsPositive,
+  IsString,
+  Min,
+} from 'class-validator';
 
 export class CreateBetDto {
-    @IsObject()
-    bet: Record<string, any>;
+  @IsObject()
+  bet: Record<string, any>;
 
-    @IsString()
-    playerUuid: string;
+  @IsString()
+  playerUuid: string;
 
-    @IsNumber()
-    @IsPositive()
-    @Min(1)
-    totalAmount: number;
+  @IsNumber()
+  @IsPositive()
+  @Min(1)
+  totalAmount: number;
 
-    @IsString()
-    currencyUuid: string;
+  @IsString()
+  currencyUuid: string;
 
-    @IsString()
-    gameUuid: string;
+  @IsString()
+  gameUuid: string;
 
-    @IsBoolean()
-    isPaid: boolean;
+  @IsBoolean()
+  isPaid: boolean;
 }
