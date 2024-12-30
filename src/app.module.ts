@@ -9,6 +9,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { GameModule } from './games/infraestructure/game.module';
 import { OperatorModule } from './operators/infraestructure/operator.module';
 import { CurrencyModule } from './currencies/infraestructure/currency.module';
+import { RoundModule } from './rounds/infraestructure/round.module';
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { CurrencyModule } from './currencies/infraestructure/currency.module';
     GameModule,
     OperatorModule,
     PlayerModule,
+    RoundModule,
     WsServerModule,
   ],
   providers: [],

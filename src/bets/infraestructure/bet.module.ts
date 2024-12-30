@@ -4,6 +4,8 @@ import { BetRepository } from '../domain/bet.repository';
 import { BetMongoRepository } from './repositories/bet.mongo-repository';
 import { MongooseModule } from '@nestjs/mongoose';
 import { BetModel, BetSchema } from './models/bet.model';
+import { RoundModule } from 'src/rounds/infraestructure/round.module';
+import { GameModule } from 'src/games/infraestructure/game.module';
 
 @Module({
   imports: [
@@ -13,6 +15,8 @@ import { BetModel, BetSchema } from './models/bet.model';
         schema: BetSchema,
       },
     ]),
+    // RoundModule,
+    GameModule,
   ],
   providers: [
     BetUseCases,

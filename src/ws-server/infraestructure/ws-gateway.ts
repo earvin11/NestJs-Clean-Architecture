@@ -36,7 +36,8 @@ export class WsGateway implements OnGatewayConnection, OnGatewayDisconnect {
 
     if (errors.length > 0) {
       const errorsParsed = parsedErrorsDtos(errors);
-      return this.server.emit('betError', errorsParsed);
+      this.server.emit('betError', errorsParsed);
+      return;
     }
 
     const resp = await this.betUseCases.create(bet);
