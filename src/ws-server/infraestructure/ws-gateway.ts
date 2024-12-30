@@ -11,6 +11,7 @@ import { validate } from 'class-validator';
 import { Server, Socket } from 'socket.io';
 import { BetUseCases } from 'src/bets/application/bet.use-cases';
 import { CreateBetDto } from 'src/bets/infraestructure/dtos/create-bet.dto';
+import { decryptMessage, encryptMessage } from 'src/shared/helpers/enctrypt';
 import { parsedErrorsDtos } from 'src/shared/helpers/parsed-errors-dto.helper';
 
 @WebSocketGateway()
@@ -25,6 +26,10 @@ export class WsGateway implements OnGatewayConnection, OnGatewayDisconnect {
   }
   handleConnection(client: Socket, ...args: any[]) {
     console.log('Client online', client.id);
+    const response = encryptMessage('Respuesta desde NestJS');
+    console.log({ response });
+    console.log('responseDcripted', decryptMessage(response));
+    this.server.emit('message', response)
   }
 
   @SubscribeMessage('bets')
