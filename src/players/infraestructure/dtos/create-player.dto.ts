@@ -1,10 +1,20 @@
-import { IsNumber, IsPositive, IsString } from 'class-validator';
+import { IsNumber, IsObject, IsPositive, IsString } from 'class-validator';
+import { OperatorEntity } from 'src/operators/domain/operator.entity';
 
 export class CreatePlayerDto {
   @IsNumber()
   @IsPositive()
-  balance: number;
+  lastBalance: number;
 
   @IsString()
   username: string;
+
+  @IsString()
+  userId: string;
+
+  @IsString()
+  tokenWallet: string;
+
+  @IsObject()
+  operator: OperatorEntity;
 }

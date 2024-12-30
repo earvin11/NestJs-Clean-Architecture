@@ -4,9 +4,11 @@ import { WsServerModule } from './ws-server/infraestructure/ws-server.module';
 import { BetModule } from './bets/infraestructure/bet.module';
 import { ClientModule } from './clients/infraestructure/client.module';
 import { ConfigModule } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
+// import { TypeOrmModule } from '@nestjs/typeorm';
 import { MongooseModule } from '@nestjs/mongoose';
 import { GameModule } from './games/infraestructure/game.module';
+import { OperatorModule } from './operators/infraestructure/operator.module';
+import { CurrencyModule } from './currencies/infraestructure/currency.module';
 
 @Module({
   imports: [
@@ -16,23 +18,24 @@ import { GameModule } from './games/infraestructure/game.module';
       dbName: 'sprintRacesDb',
     }),
     // POSTGRESQL
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: process.env.DB_HOST,
-      port: +process.env.DB_PORT,
-      database: process.env.DB_NAME,
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
-      autoLoadEntities: true,
-      synchronize: true,
-    }),
-    PlayerModule,
-    WsServerModule,
+    // TypeOrmModule.forRoot({
+    //   type: 'postgres',
+    //   host: process.env.DB_HOST,
+    //   port: +process.env.DB_PORT,
+    //   database: process.env.DB_NAME,
+    //   username: process.env.DB_USERNAME,
+    //   password: process.env.DB_PASSWORD,
+    //   autoLoadEntities: true,
+    //   synchronize: true,
+    // }),
     BetModule,
     ClientModule,
+    CurrencyModule,
     GameModule,
+    OperatorModule,
+    PlayerModule,
+    WsServerModule,
   ],
-  controllers: [],
   providers: [],
 })
 export class AppModule {}

@@ -1,5 +1,13 @@
+import { OperatorEntity } from 'src/operators/domain/operator.entity';
+
 export interface PlayerEntity {
-  id?: string;
+  uuid?: string;
   username: string;
-  balance: number;
+  lastBalance: number;
+  status?: boolean;
+  isAdmin?: boolean;
+  tokenWallet: string;
+  WL?: string;
+  operator: OperatorEntity;
+  userId: string;
 }
