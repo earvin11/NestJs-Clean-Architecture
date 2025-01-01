@@ -21,6 +21,6 @@ import { OperatorRepository } from '../domain/operator.repository';
       useExisting: OperatorMongoRepository,
     },
   ],
-  exports: [OperatorUseCases],
+  exports: [OperatorRepository, OperatorUseCases],
 })
 export class OperatorModule {}
