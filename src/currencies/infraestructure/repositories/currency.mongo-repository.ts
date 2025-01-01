@@ -21,6 +21,9 @@ export class CurrencyMongoRepository extends CurrencyRepository {
   async findByUuid(uuid: string): Promise<CurrencyEntity | null> {
     return await this.currencyModel.findOne({ uuid });
   }
+  async findByIsoCode(isoCode: string): Promise<CurrencyEntity | null> {
+    return await this.currencyModel.findOne({ isoCode });
+  }
   async update(
     uuid: string,
     data: Partial<CurrencyEntity>,

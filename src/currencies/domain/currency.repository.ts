@@ -4,6 +4,7 @@ export abstract class CurrencyRepository {
   abstract create(data: CurrencyEntity): Promise<CurrencyEntity>;
   abstract findAll(): Promise<CurrencyEntity[] | []>;
   abstract findByUuid(uuid: string): Promise<CurrencyEntity | null>;
+  abstract findByIsoCode(isoCode: string): Promise<CurrencyEntity | null>;
   abstract update(
     uuid: string,
     data: Partial<CurrencyEntity>,
