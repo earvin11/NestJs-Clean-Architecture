@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { ClientEntity } from 'src/clients/domain/client.entity';
 
-@Schema()
+@Schema({ versionKey: false })
 export class ClientModel extends Document implements ClientEntity {
   @Prop({ require: true })
   uuid?: string;

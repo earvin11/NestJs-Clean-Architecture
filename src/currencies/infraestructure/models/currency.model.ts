@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { CurrencyEntity } from 'src/currencies/domain/currency.entity';
 
-@Schema()
+@Schema({ versionKey: false })
 export class CurrencyModel extends Document implements CurrencyEntity {
   @Prop()
   name: string;

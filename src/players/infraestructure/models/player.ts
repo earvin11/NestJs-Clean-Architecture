@@ -3,7 +3,7 @@ import { Document } from 'mongoose';
 import { OperatorEntity } from 'src/operators/domain/operator.entity';
 import { PlayerEntity } from 'src/players/domain/player.entity';
 
-@Schema()
+@Schema({ versionKey: false })
 export class Player extends Document implements PlayerEntity {
   @Prop({ unique: true })
   uuid: string;
@@ -22,6 +22,9 @@ export class Player extends Document implements PlayerEntity {
 
   @Prop()
   WL?: string;
+
+  @Prop()
+  operatorUuid: string;
 
   @Prop({ type: Object })
   operator: OperatorEntity;

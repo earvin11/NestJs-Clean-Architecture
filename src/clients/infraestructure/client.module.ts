@@ -29,5 +29,6 @@ import { ClientMongoRepository } from './repositories/client.mongo-repository';
       },
     ]),
   ],
+  exports: [ClientRepository, ClientUseCases],
 })
 export class ClientModule {}

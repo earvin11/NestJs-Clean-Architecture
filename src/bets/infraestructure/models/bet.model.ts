@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { BetEntity } from 'src/bets/domain/bet.entity';
 
-@Schema()
+@Schema({ versionKey: false })
 export class BetModel extends Document implements BetEntity {
   @Prop({ required: true })
   uuid: string;

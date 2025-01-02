@@ -24,6 +24,6 @@ import { GameController } from './game.controller';
       useExisting: GameMongoRepository,
     },
   ],
-  exports: [GameUseCases],
+  exports: [GameRepository, GameUseCases],
 })
 export class GameModule {}

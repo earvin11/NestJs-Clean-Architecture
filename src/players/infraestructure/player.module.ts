@@ -19,6 +19,6 @@ import { PlayerMongoRepository } from './repositories/player.mongo-repository';
       useExisting: PlayerMongoRepository,
     },
   ],
-  exports: [PlayerUseCases],
+  exports: [PlayerRepository, PlayerUseCases],
 })
 export class PlayerModule {}

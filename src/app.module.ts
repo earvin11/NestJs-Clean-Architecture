@@ -10,6 +10,7 @@ import { GameModule } from './games/infraestructure/game.module';
 import { OperatorModule } from './operators/infraestructure/operator.module';
 import { CurrencyModule } from './currencies/infraestructure/currency.module';
 import { RoundModule } from './rounds/infraestructure/round.module';
+import { LaunchModule } from './launch/infraestructure/launch.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { RoundModule } from './rounds/infraestructure/round.module';
     ClientModule,
     CurrencyModule,
     GameModule,
+    LaunchModule,
     OperatorModule,
     PlayerModule,
     RoundModule,

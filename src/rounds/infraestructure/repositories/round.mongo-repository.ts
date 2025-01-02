@@ -25,9 +25,15 @@ export class RoundMongoRepository extends RoundRepository {
     uuid: string,
     dataToUpdate: Partial<RoundEntity>,
   ): Promise<RoundEntity | null> {
-    return await this.roundModel.findOneAndUpdate({ uuid }, dataToUpdate, { new: true });
+    return await this.roundModel.findOneAndUpdate({ uuid }, dataToUpdate, {
+      new: true,
+    });
   }
   async remove(uuid: string): Promise<RoundEntity | null> {
-    return await this.roundModel.findOneAndUpdate({ uuid }, { status: false }, { new: true });
+    return await this.roundModel.findOneAndUpdate(
+      { uuid },
+      { status: false },
+      { new: true },
+    );
   }
 }

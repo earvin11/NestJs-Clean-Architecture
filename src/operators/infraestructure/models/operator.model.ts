@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { OperatorEntity } from 'src/operators/domain/operator.entity';
 
-@Schema()
+@Schema({ versionKey: false })
 export class OperatorModel extends Document implements OperatorEntity {
   @Prop({ unique: true })
   uuid: string;

@@ -1,4 +1,4 @@
-import { IsString, MinLength } from 'class-validator';
+import { IsOptional, IsString, MinLength } from 'class-validator';
 
 export class CreateClientDto {
   @IsString()
@@ -19,8 +19,10 @@ export class CreateClientDto {
   endpointWin: string;
 
   @IsString()
+  @IsOptional()
   logo?: string;
 
   @IsString()
+  @IsOptional()
   loaderLogo?: string;
 }

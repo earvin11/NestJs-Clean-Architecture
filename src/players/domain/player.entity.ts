@@ -8,6 +8,7 @@ export interface PlayerEntity {
   isAdmin?: boolean;
   tokenWallet: string;
   WL?: string;
+  operatorUuid: string;
   operator: OperatorEntity;
   userId: string;
 }

@@ -13,12 +13,14 @@ export class Player implements PlayerEntity {
   public WL?: string;
   public operator: OperatorEntity;
   public userId: string;
+  public operatorUuid: string;
 
   constructor(data: PlayerEntity) {
     this.lastBalance = data.lastBalance;
     this.username = data.username;
     this.tokenWallet = data.tokenWallet;
     this.WL = data.WL;
+    this.operatorUuid = data.operatorUuid;
     this.operator = data.operator;
     this.userId = data.userId;
     this.uuid = generateUuid();

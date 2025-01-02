@@ -22,6 +22,9 @@ export class PlayerMongoRepository extends PlayerRepository {
   async findByUuid(uuid: string): Promise<PlayerEntity | null> {
     return await this.playerModel.findOne({ uuid });
   }
+  async findOneBy(filter: Record<string, any>): Promise<PlayerEntity | null> {
+    return await this.playerModel.findOne(filter);
+  }
   async update(
     uuid: string,
     dataToUpdate: Partial<PlayerEntity>,

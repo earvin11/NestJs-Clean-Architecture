@@ -8,13 +8,13 @@ import { GameUseCases } from 'src/games/application/game.use-cases';
 export class BetUseCases {
   constructor(
     private readonly betRepository: BetRepository,
-    private readonly gameUseCases: GameUseCases
+    private readonly gameUseCases: GameUseCases,
   ) {}
 
   async create(data: BetEntity) {
     const { gameUuid } = data;
     const game = await this.gameUseCases.findByUuid(gameUuid);
-    console.log({ game })
+    console.log({ game });
     const bet = new Bet(data);
     return await this.betRepository.create(bet);
   }

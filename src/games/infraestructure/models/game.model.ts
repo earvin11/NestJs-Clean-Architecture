@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { GameEntity } from 'src/games/domain/game.entity';
 
-@Schema()
+@Schema({ versionKey: false })
 export class GameModel extends Document implements GameEntity {
   @Prop({ unique: true })
   uuid: string;

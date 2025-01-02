@@ -6,7 +6,10 @@ import {
 } from '../interfaces/wallet.interfaces';
 
 // Metodo para enviar apuesta a la wallet
-export const sendBet = async (endpointBet: string, data: DebitWalletRequest) => {
+export const sendBet = async (
+  endpointBet: string,
+  data: DebitWalletRequest,
+) => {
   try {
     const betWallet = await axios({
       method: 'POST',
@@ -24,7 +27,10 @@ export const sendBet = async (endpointBet: string, data: DebitWalletRequest) => 
 };
 
 // Metodo para enviar credito a la wallet
-export const sendCredit = async (endpointWin: string, data: CreditWalletRequest) => {
+export const sendCredit = async (
+  endpointWin: string,
+  data: CreditWalletRequest,
+) => {
   try {
     const creditWallet = await axios({
       method: 'POST',
@@ -42,7 +48,10 @@ export const sendCredit = async (endpointWin: string, data: CreditWalletRequest)
 };
 
 // Login player
-export const loginPllayerInWallet = async (endpointAuth: string, token: string) => {
+export const loginPllayerInWallet = async (
+  endpointAuth: string,
+  token: string,
+) => {
   const walletPlayer = await axios<PlayerWalletResponse>({
     method: 'POST',
     url: endpointAuth,

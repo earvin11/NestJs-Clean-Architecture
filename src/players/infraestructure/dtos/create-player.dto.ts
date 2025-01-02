@@ -17,4 +17,7 @@ export class CreatePlayerDto {
 
   @IsObject()
   operator: OperatorEntity;
+
+  @IsString()
+  operatorUuid: string;
 }

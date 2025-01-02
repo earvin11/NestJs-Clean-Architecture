@@ -15,7 +15,7 @@ import { CurrencyRepository } from '../domain/currency.repository';
       useExisting: CurrencyMongoRepository,
     },
   ],
-  exports: [CurrencyUseCases],
+  exports: [CurrencyRepository, CurrencyUseCases],
   imports: [
     MongooseModule.forFeature([
       {

@@ -29,7 +29,7 @@ export class WsGateway implements OnGatewayConnection, OnGatewayDisconnect {
     const response = encryptMessage('Respuesta desde NestJS');
     console.log({ response });
     console.log('responseDcripted', decryptMessage(response));
-    this.server.emit('message', response)
+    this.server.emit('message', response);
   }
 
   @SubscribeMessage('bets')
